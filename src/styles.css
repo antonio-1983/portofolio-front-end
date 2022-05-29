@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-image: linear-gradient(135deg,
+    #073855,#505488,#472563,#222886);
+    
+}
+.perfil{
+    line-height:0%;
+    padding-left: 35px;
+}
+.contenido {
+    list-style: none;
+    font-size: 12px;
+    line-height:0%
+}
+.li-contenido{
+    
+    padding: 5px;
+    margin: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow:-10px -5px 30px rgb(144, 146, 236);
+    
+}
+
+ .logo {
+    border-radius: 5px;
+} 
+.banner{
+    width: 100%;
+    /* box-sizing: border-box; */
+    height: 250px;
+    
+}
+ .mat-card{
+    border-radius: 5px;
+    border:solid 1px;
+    border-color: #0a66c2;
+    box-shadow:10px 10px 20px #333;
+    margin: 5px;
+    
+ }
+
+ .foto{
+    width:200px; 
+    height:200px;
+    margin-top:3px;
+    border-radius: 50px;
+    box-shadow:0px 0px 20px 2px rgb(144, 146, 236);
+    
+ }
+
+  .titulo-contenido{
+     padding-left: 35px;
+  }
+.item-info{
+    font-size: 20px;
+}
+.infor{
+    margin: top 10px;
+}
+.link:hover{
+    background-color: rgb(95, 26, 116)
+}
+.link{
+    color: rgb(42, 12, 51)
+}

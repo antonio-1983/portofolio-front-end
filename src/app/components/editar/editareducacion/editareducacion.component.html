@@ -1,0 +1,86 @@
+<div class="card mat-card">
+    <div>
+        <h1 class="titulo-contenido">Formacion Academica</h1>
+     </div>
+
+
+     <div class="mx-5 mb-2">
+    
+        <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+    Nueva Formacion Academica
+    </button>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Nueva Formacion Academica</h5>
+      
+    </div>
+    <div class="modal-body">
+        <form class = "card mb-2" [formGroup]="educacionForm">
+            <div class="card-body p-2">
+                <input formControlName="id_persona"
+                class="form-control"
+                placeholder="id de la persona"
+                type="number"
+                >
+                <input formControlName="nombre"
+                class="form-control"
+                placeholder="Nombre de la institución"
+                >
+                <input formControlName="titulo"
+                class="form-control"
+                placeholder="Titulo"
+                >
+                <input formControlName="desde"
+                class="form-control"
+                placeholder="desde"
+                >
+                <input formControlName="hasta"
+                class="form-control"
+                placeholder="hasta"
+                >
+              <button (click)="crearEducacion()" type="button" class="btn btn-outline-primary mt-2">
+                Agregar
+              </button>
+      
+            </div>
+      
+          </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="educacionForm.reset('')">Cerrar</button>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+     <ul class="contenido" >
+       <div class="li-contenido" *ngFor="let educacion of educaciones">
+         <li>
+         <h4>{{educacion.nombre}}</h4>
+         <p>{{educacion.titulo}}</p>
+         <p>Desde {{educacion.desde}} hasta {{educacion.hasta}}</p>
+            <button (click)="borrarEducacion(educacion.id)" 
+            type="button" class="btn btn-outline-danger ">
+            Eliminar
+            </button>
+            <button (click)="editarEducacion(educacion.id)" 
+            type="button" class="btn btn-outline-warning mx-1"
+            data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            Editar
+            </button>
+         </li>
+       </div>
+     </ul> 
+   </div>

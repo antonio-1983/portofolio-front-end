@@ -1,0 +1,78 @@
+<div class="card mat-card">
+    
+        <h1 class="titulo-contenido">Conocimientos</h1>
+     
+
+<div class="mx-5 mb-2">
+    
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Ingrese un nuevo conocimiento
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Conocimiento Nuevo</h5>
+          
+        </div>
+        <div class="modal-body">
+            <form class = "card mb-2" [formGroup]="conocimientoForm">
+                <div class="card-body p-2">
+                    <input formControlName="id_persona"
+                    class="form-control"
+                    placeholder="id de la persona"
+                    type="number"
+                    >
+                    <input formControlName="tecnologia"
+                    class="form-control"
+                    placeholder="Tenologia"
+                    >
+                    <input formControlName="nivel"
+                    class="form-control"
+                    placeholder="Nivel"
+                    >
+                  <button (click)="crearConocimiento()" type="button" class="btn btn-outline-primary mt-2">
+                    Agregar
+                  </button>
+          
+                </div>
+          
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="conocimientoForm.reset('')">Cerrar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+</div>
+
+
+
+     <ul class="contenido" >
+       <div class="li-contenido" *ngFor="let conocimiento of conocimientos"> 
+         <li>
+
+         <h4>{{conocimiento.tecnologia}}</h4>
+         <p>{{conocimiento.nivel}}</p>
+            <button (click)="borrarConocimiento(conocimiento.id)" 
+            type="button" class="btn btn-outline-danger ">
+            Eliminar
+            </button>
+
+            <button (click)="editarConocimiento(conocimiento.id)" 
+            type="button" class="btn btn-outline-warning mx-1"
+            data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Editar
+            </button>
+
+         </li>  
+       </div>
+     </ul> 
+   </div>

@@ -1,0 +1,82 @@
+<div class="card mat-card">
+    <div>
+        <h1 class="titulo-contenido">Experiencia</h1>
+     </div>
+
+
+     <div class="container mb-2">
+    
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+Nueva Experiencia
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Nueva Experiencia</h5>
+      
+    </div>
+    <div class="modal-body">
+        <form class = "card mb-2" [formGroup]="experienciaForm">
+            <div class="card-body p-2">
+                <input formControlName="id_persona"
+                class="form-control"
+                placeholder="id de la persona"
+                type="number"
+                >
+                <input formControlName="empresa"
+                class="form-control"
+                placeholder="Nombre de la empresa"
+                >
+                <input formControlName="puesto"
+                class="form-control"
+                placeholder="Puesto"
+                >
+                <input formControlName="desde"
+                class="form-control"
+                placeholder="desde"
+                >
+                <input formControlName="hasta"
+                class="form-control"
+                placeholder="hasta"
+                >
+              <button (click)="crearExperiencia()" type="button" class="btn btn-outline-primary mt-2">
+                Agregar
+              </button>
+      
+            </div>
+      
+          </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="experienciaForm.reset('')">Cerrar</button>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+     <ul class="contenido" >
+       <div class="li-contenido" *ngFor="let experiencia of experiencias">
+         <li>
+         <h4>{{experiencia.empresa}}</h4>
+         <p>{{experiencia.puesto}}</p>
+         <p>Desde {{experiencia.desde}} hasta {{experiencia.hasta}}</p>
+         <button (click)="borrarExperiencia(experiencia.id)" 
+            type="button" class="btn btn-outline-danger ">
+            Eliminar
+            </button>
+            <button (click)="editarExperiencia(experiencia.id)" 
+            type="button" class="btn btn-outline-warning mx-1"
+            data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Editar
+            </button>
+         </li>
+       </div>
+     </ul> 
+   </div>

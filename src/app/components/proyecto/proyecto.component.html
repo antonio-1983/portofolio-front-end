@@ -1,0 +1,17 @@
+<div class="card mat-card">
+    <div>
+        <h1 class="titulo-contenido">Proyectos</h1>
+    </div>
+    <div class="card mat-card">
+        
+                <div class="card-content m-5" *ngFor="let proyecto of proyectos">
+                
+                <h2>{{proyecto.descripcion}}</h2>
+                    <a href={{proyecto.repositorio}} alt="proyecto"  target="_blank">
+                        <h5>{{proyecto.repositorio}}</h5>
+                    </a>
+                    <img src={{proyecto.imagen}} alt="" > 
+                </div> 
+            </div>
+        
+</div>

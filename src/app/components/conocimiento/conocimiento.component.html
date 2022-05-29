@@ -1,0 +1,20 @@
+<div class="card mat-card"style="background-image:url('../.././../assets/images/fondoConocimiento.jpg'); background-size:100% 100%">
+    <div>
+        <h1 class="titulo-contenido">Conocimientos</h1>
+     </div>
+<!--****************************************************************-->
+
+<!--****************************************************************-->
+
+
+     <ul class="contenido" >
+       <div class="li-contenido" *ngFor="let conocimiento of conocimientos"> 
+         <li>
+
+         <h4>{{conocimiento.tecnologia}}</h4>
+         <p>{{conocimiento.nivel}}</p>
+         
+         </li>  
+       </div>
+     </ul> 
+   </div>

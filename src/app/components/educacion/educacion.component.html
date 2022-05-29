@@ -1,0 +1,15 @@
+<div class="card mat-card"style="background-image:url('../.././../assets/images/fondoEducacion.jpg'); background-size:100% 100%">
+  
+    <div>
+        <h1 class="titulo-contenido">Formacion Academica</h1>
+     </div>
+     <ul class="contenido" >
+       <div class="li-contenido" *ngFor="let educacion of educaciones">
+         <li>
+         <h3>{{educacion.nombre}}</h3>
+         <h6>{{educacion.titulo}}</h6>
+         <h6>Desde {{educacion.desde}} hasta {{educacion.hasta}}</h6>
+         </li>
+       </div>
+     </ul> 
+   </div>

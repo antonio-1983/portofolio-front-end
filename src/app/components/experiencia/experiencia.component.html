@@ -1,0 +1,15 @@
+<div class="card mat-card" style="background-image:url('../.././../assets/images/fondoExperiencia.jpg'); background-size:100% 100%">
+   <div>
+       <h1 class="titulo-contenido">Experiencia Laboral</h1>
+    </div>
+    <ul class="contenido" >
+      <div class="li-contenido" *ngFor="let experiencia of experiencias">
+        <li>
+        <h3>{{experiencia.empresa}}</h3>
+        <h6>{{experiencia.puesto}}</h6>
+        <h6>Desde {{experiencia.desde}} hasta {{experiencia.hasta}}</h6>
+        
+        </li>
+      </div>
+    </ul> 
+  </div>

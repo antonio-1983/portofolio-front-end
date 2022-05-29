@@ -1,0 +1,87 @@
+<div class="card mat-card">
+  <div>
+      <h1 class="titulo-contenido">Proyectos</h1>
+   </div>
+
+
+   <div class="container mb-2">
+  
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+Nuevo Proyecto
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Proyecto</h5>
+    
+  </div>
+  <div class="modal-body">
+      <form class = "card mb-2" [formGroup]="proyectoForm">
+          <div class="card-body p-2">
+              <input formControlName="id_persona"
+              class="form-control"
+              placeholder="id de la persona"
+              type="number"
+              >
+              <input formControlName="descripcion"
+              class="form-control"
+              placeholder="Descripcion"
+              >
+              <input formControlName="repositorio"
+              class="form-control"
+              placeholder="Repositorio"
+              >
+              <input formControlName="imagen"
+              class="form-control"
+              placeholder="Imagen"
+              >
+             
+            <button (click)="crearProyecto()" type="button" class="btn btn-outline-primary mt-2">
+              Agregar
+            </button>
+    
+          </div>
+    
+        </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="proyectoForm.reset('')">Cerrar</button>
+    
+  </div>
+</div>
+</div>
+</div>
+<!--************************************************************-->
+
+  
+  <div class="card mat-card">
+              <div class="container">
+              <div class="card-content m-5" *ngFor="let proyecto of proyectos">
+              
+              <h2>{{proyecto.descripcion}}</h2>
+                  
+
+                  <a href={{proyecto.repositorio}} alt="proyecto"  target="_blank">
+                      <h5>{{proyecto.repositorio}}</h5>
+                  </a>
+                  <div class="container">
+                  <img src={{proyecto.imagen}} alt="" > 
+                </div>
+                      <button (click)="borrarProyecto(proyecto.id)" 
+                      type="button" class="btn btn-outline-danger ">
+                      Eliminar
+                      </button>
+                      <button (click)="editarProyecto(proyecto.id)" 
+                      type="button" class="btn btn-outline-warning mx-1"
+                      data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                      Editar
+                      </button>
+                  </div>
+              </div> 
+            
+          </div>
+      
