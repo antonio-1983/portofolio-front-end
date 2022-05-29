@@ -1,3 +1,6 @@
+Frontend realizado con Angular, que muestra los datos de una Api con spring boot, que conecta con una base de datos mysql. El login no puede realizarlo, no logre entenderlo bien. Para editar el portfolio hay una opcion en el navbar y los cambios se pueden realizar tanto en el front como en el back a traves de la base de datos
+
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
