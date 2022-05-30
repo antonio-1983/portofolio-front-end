@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-// import { AppRoutingModule } from './app-routing.module';
-import { app_routing } from "./app.routes";
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -42,7 +41,7 @@ import { EditarproyectoComponent } from './components/editar/editarproyecto/edit
   ],
   imports: [
     BrowserModule,
-    app_routing,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
